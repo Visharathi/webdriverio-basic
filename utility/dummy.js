@@ -5,4 +5,9 @@ class dummyclass
         return "my name"
 
     }
+    getid()
+    {
+        return "my id"
+
+    }
 }
