@@ -1,0 +1,21 @@
+{
+   "urls":
+  {
+    "main":"https://accounts.spotify.com/en/login",
+    "dummy":"https://gmail.com",
+    "dummy2":"https://www.linkedin.com/"
+  },
+  "Users":[
+    {
+      "env":"main",
+      "username":"visharathi16@gmail.com",
+      "password":"Vish@2021"
+    },
+    {
+      "env":"dummy",
+      "username":"xxx",
+      "password":"yyy"
+    }
+    
+  ]
+}
