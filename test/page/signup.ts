@@ -40,7 +40,7 @@ class signup {
     public async signup()
     {
 await base.openURL("uk/signup");
-await utilObj.clickElement(this.acceptCookies);
+//await utilObj.clickElement(this.acceptCookies);
 await utilObj.setElementValue(this.email,"ccc@delta.com");
 await utilObj.setElementValue(this.confirmemail,"ccc@delta.com");
 await utilObj.setElementValue(this.pwd,"Vish@2021");
