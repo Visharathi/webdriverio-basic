@@ -36,10 +36,10 @@ public async signin(username, password)
   //  await browser.url("https://accounts.spotify.com/en/login")
     await utilObj.setElementValue(this.email,username)
     await utilObj.setElementValue(this.pwd,password)
-    await utilObj.ScrollForElement(this.loginButton)
+  //  await utilObj.ScrollForElement(this.loginButton)
     await utilObj.clickElement(this.loginButton)
     await utilObj.clickElement(this.webplayerButton)
-    await utilObj.clickElement(this.acceptCookies)
+   // await utilObj.clickElement(this.acceptCookies)
 
 }
 public async openURL()

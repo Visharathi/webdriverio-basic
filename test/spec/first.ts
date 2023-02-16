@@ -19,12 +19,12 @@ describe('my first suite', async() => {
       allureReporter.addSeverity('trivial')
       allureReporter.addFeature('validate signup')
         await browser.url("https://www.spotify.com/uk/signup")
-        await (await $("//button[text()='Accept Cookies']")).click()
+      //  await (await $("//button[text()='Accept Cookies']")).click()
         await browser.scroll(0, 500)
       const month = await $('#month')
       const options = await month.$$('option')
       await month.selectByAttribute("value","04")
-     expect(await (await $("option[value='04']")).isSelected()).toBe(false)
+     expect(await (await $("option[value='04']")).isSelected()).toBe(true)
     //  console.log('the option length is',options.length);
       //expect(options.length).toBe(13)
       
