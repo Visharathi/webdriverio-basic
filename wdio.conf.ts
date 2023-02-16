@@ -4,6 +4,7 @@ import JsonData from "./utility/JsonData.json" assert { type: 'json' };
 import data2 from './utility/data2.js'
 import allure from 'allure-commandline';
 let baseURL = data2.getURL()
+
 //let alluredir = './reports/allure'
 //let ENV= process.env.Env
 /*const urls = {
@@ -28,6 +29,8 @@ export const config: Options.Testrunner = {
     // Runner Configuration
     // ====================
     // WebdriverIO supports running e2e tests as well as unit and component tests.
+    user: 'visharathi_NJUmnx',
+  key: 'm1K4tas2Vshqrkhh92zp',
     runner: 'local',
     autoCompileOpts: {
         tsNodeOpts: {
@@ -83,7 +86,8 @@ export const config: Options.Testrunner = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [{
+    capabilities: [
+       /* {
     
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instances available you can make sure that not more than
@@ -99,7 +103,16 @@ export const config: Options.Testrunner = {
         // it is possible to configure which logTypes to include/exclude.
         // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
         // excludeDriverLogs: ['bugreport', 'server'],
-    }],
+    },*/
+    {
+        browserName: 'Chrome',
+        'bstack:options': {
+          os: 'Windows',
+          osVersion: '11',
+          browserVersion: '109.0'
+        }}
+],
+
     //
     // ===================
     // Test Configurations
@@ -148,7 +161,10 @@ export const config: Options.Testrunner = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['chromedriver'],
+    services: /*['chromedriver'],*/
+    [['browserstack', {
+        browserstackLocal: true
+    }]],
     
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
