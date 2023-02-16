@@ -17,7 +17,8 @@
     "wdio-chromedriver-service": "^8.0.1"
   },
   "scripts": {
-    "wdio": "wdio run ./wdio.conf.ts"
+    "wdio": "wdio run ./wdio.conf.ts",
+    "wdio:bstack": "wdio run ./wdio.conf.bstack.ts"
   },
   "dependencies": {
     "allure-commandline": "^2.21.0",

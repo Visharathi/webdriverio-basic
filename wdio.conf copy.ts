@@ -29,7 +29,8 @@ export const config: Options.Testrunner = {
     // Runner Configuration
     // ====================
     // WebdriverIO supports running e2e tests as well as unit and component tests.
-  
+    user: 'visharathi_NJUmnx',
+  key: 'm1K4tas2Vshqrkhh92zp',
   
     runner: 'local',
     autoCompileOpts: {
@@ -57,7 +58,7 @@ export const config: Options.Testrunner = {
     //
     specs: [
         // ToDo: define location for spec files here
-        './test/spec/**/homepageTest.ts'
+        './test/spec/**/*.ts'
     ],
     // Patterns to exclude.
     exclude: [
@@ -88,23 +89,25 @@ export const config: Options.Testrunner = {
     //
     capabilities: [
         {
-    
+            
+                browserName: 'Chrome',
+                'bstack:options': {
+                  os: 'Windows',
+                  osVersion: '11',
+                  browserVersion: '109.0'
+                },
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instances available you can make sure that not more than
         // 5 instances get started at a time.
-        maxInstances: 3,
+        maxInstances: 5,
         //
-        browserName: 'chrome',
-        acceptInsecureCerts: true,
-      /*  'goog:chromeOptions': {
-            args:['headless','--disable-gpu','--disable-dev-shm-usage']
-          },*/
+       
         // If outputDir is provided WebdriverIO can capture driver session logs
         // it is possible to configure which logTypes to include/exclude.
         // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
         // excludeDriverLogs: ['bugreport', 'server'],
     },
-  
+   /* */
 ],
 
     //
@@ -155,8 +158,10 @@ export const config: Options.Testrunner = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['chromedriver'],
-   
+    services: 
+    [['browserstack', {
+       // browserstackLocal: true
+    }]],
     
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
@@ -278,11 +283,30 @@ export const config: Options.Testrunner = {
     /**
      * Function to be executed before a test (in Mocha/Jasmine) starts.
      */
-     beforeTest: function (test, context) {
-        browser.maximizeWindow()
-     },
-    
-    
+    // beforeTest: function (test, context) {
+    // },
+    /**
+     * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
+     * beforeEach in Mocha)
+     */
+    // beforeHook: function (test, context) {
+    // },
+    /**
+     * Hook that gets executed _after_ a hook within the suite starts (e.g. runs after calling
+     * afterEach in Mocha)
+     */
+    // afterHook: function (test, context, { error, result, duration, passed, retries }) {
+    // },
+    /**
+     * Function to be executed after a test (in Mocha/Jasmine only)
+     * @param {Object}  test             test object
+     * @param {Object}  context          scope object the test was executed with
+     * @param {Error}   result.error     error object in case the test fails, otherwise `undefined`
+     * @param {Any}     result.result    return object of test function
+     * @param {Number}  result.duration  duration of test
+     * @param {Boolean} result.passed    true if test has passed, otherwise false
+     * @param {Object}  result.retries   informations to spec related retries, e.g. `{ attempts: 0, limit: 0 }`
+     */
      afterTest: async function(test, context, { error, result, duration, passed, retries }) {
         if (error) {
             await browser.takeScreenshot();
