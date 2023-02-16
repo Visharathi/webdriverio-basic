@@ -1,7 +1,7 @@
 import type { Options } from '@wdio/types'
 import JsonData from "./utility/JsonData.json" assert { type: 'json' };
 
-import data2 from './utility/data2'
+import data2 from './utility/data2.js'
 import allure from 'allure-commandline';
 let baseURL = data2.getURL()
 let alluredir = './reports/allure'
