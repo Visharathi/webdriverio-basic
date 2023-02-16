@@ -4,7 +4,7 @@ import JsonData from "./utility/JsonData.json" assert { type: 'json' };
 import data2 from './utility/data2.js'
 import allure from 'allure-commandline';
 let baseURL = data2.getURL()
-let alluredir = './reports/allure'
+//let alluredir = './reports/allure'
 //let ENV= process.env.Env
 /*const urls = {
     main : 'https://accounts.spotify.com/en/login',
@@ -171,7 +171,7 @@ export const config: Options.Testrunner = {
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
     reporters: ['spec',['allure', {
-        outputDir: alluredir+'/allure-results',
+        outputDir: 'allure-results',
         disableWebdriverStepsReporting: true,
         disableWebdriverScreenshotsReporting: false,
     }]],
@@ -250,7 +250,7 @@ export const config: Options.Testrunner = {
      * Hook that gets executed before the suite starts
      * @param {Object} suite suite details
      */
-    beforeSuite: function (suite) {
+    /*beforeSuite: function (suite) {
         const fs = require('fs')
         let dir = alluredir + '/allure-results'
         try{
@@ -342,8 +342,8 @@ export const config: Options.Testrunner = {
      * @param {<Object>} results object containing test results
      */
     onComplete: function() {
-        const reportError = new Error('Could not generate Allure report')
-        const generation = allure(['generate', alluredir+'/allure-results', '--clean','-o',alluredir+'/allure-report'])
+       // const reportError = new Error('Could not generate Allure report')
+        const generation = allure(['generate', 'allure-results', '--clean'])
         return new Promise<void>((resolve, reject) => {
             const generationTimeout = setTimeout(
                 () => reject(reportError),
