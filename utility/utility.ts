@@ -10,7 +10,7 @@ await element.click()
     async setElementValue(element,value)
     {
         element.scrollIntoView()
-await element.waitForDisplayed()
+await element.waitForDisplayed({ timeout: 15000})
 await element.isEnabled()
 await element.clearValue()
 await element.setValue(value)
