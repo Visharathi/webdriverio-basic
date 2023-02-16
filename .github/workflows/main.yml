@@ -14,7 +14,7 @@ jobs:
         - name: Test
           run: npx cross-env Env=main wdio run ./wdio.conf.ts
         - uses: actions/upload-artifact@v3
-          if: failure()
+          if: always()
           with:
             name: AllureReport
             path: ./allure-report
