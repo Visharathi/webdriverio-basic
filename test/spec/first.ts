@@ -19,7 +19,7 @@ describe('my first suite', async() => {
       allureReporter.addSeverity('trivial')
       allureReporter.addFeature('validate signup')
         await browser.url("https://www.spotify.com/uk/signup")
-      //  await (await $("//button[text()='Accept Cookies']")).click()
+       await (await $("//button[text()='Accept Cookies']")).click()
         await browser.scroll(0, 500)
       const month = await $('#month')
       const options = await month.$$('option')
@@ -75,7 +75,7 @@ it('seventh test', async() => {
   allureReporter.addSeverity('blocker')
   allureReporter.addFeature('validate login')
   await browser.url('https://accounts.spotify.com/en/login')
-  //await $("//button[text()='ACCEPT ALL']")
+  await $("//button[text()='ACCEPT ALL']")
   const anchors = await $$('a')
   await anchors.forEach((async anchor =>{
     await anchor.getAttribute('href').then(async(anchor)=>{

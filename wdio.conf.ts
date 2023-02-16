@@ -31,6 +31,7 @@ export const config: Options.Testrunner = {
     // WebdriverIO supports running e2e tests as well as unit and component tests.
     user: 'visharathi_NJUmnx',
   key: 'm1K4tas2Vshqrkhh92zp',
+  
     runner: 'local',
     autoCompileOpts: {
         tsNodeOpts: {
@@ -57,12 +58,12 @@ export const config: Options.Testrunner = {
     //
     specs: [
         // ToDo: define location for spec files here
-        './test/spec/**/*.ts'
+        './test/spec/**/homepageTest.ts'
     ],
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
-        './test/spec/**/homepageTest.ts'
+      //  './test/spec/**/homepageTest.ts'
     ],
     //
     // ============
@@ -87,7 +88,7 @@ export const config: Options.Testrunner = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [
-       /* {
+        {
     
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instances available you can make sure that not more than
@@ -96,21 +97,21 @@ export const config: Options.Testrunner = {
         //
         browserName: 'chrome',
         acceptInsecureCerts: true,
-        'goog:chromeOptions': {
+      /*  'goog:chromeOptions': {
             args:['headless','--disable-gpu','--disable-dev-shm-usage']
-          },
+          },*/
         // If outputDir is provided WebdriverIO can capture driver session logs
         // it is possible to configure which logTypes to include/exclude.
         // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
         // excludeDriverLogs: ['bugreport', 'server'],
-    },*/
-    {
+    },
+   /* {
         browserName: 'Chrome',
         'bstack:options': {
           os: 'Windows',
           osVersion: '11',
           browserVersion: '109.0'
-        }}
+        }}*/
 ],
 
     //
@@ -161,10 +162,10 @@ export const config: Options.Testrunner = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: /*['chromedriver'],*/
-    [['browserstack', {
-        browserstackLocal: true
-    }]],
+    services: ['chromedriver'],
+   /* [['browserstack', {
+       // browserstackLocal: true
+    }]]*/
     
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber

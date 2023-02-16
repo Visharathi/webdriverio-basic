@@ -38,10 +38,8 @@ public async signin(username, password)
     await utilObj.setElementValue(this.pwd,password)
   //  await utilObj.ScrollForElement(this.loginButton)
     await utilObj.clickElement(this.loginButton)
-    await browser.pause(7000);
- // (await  (await this.webplayerButton).click())
     await utilObj.clickElement(this.webplayerButton)
-   // await utilObj.clickElement(this.acceptCookies)
+   await utilObj.clickElement(this.acceptCookies)
 
 }
 public async openURL()
