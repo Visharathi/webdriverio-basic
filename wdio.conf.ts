@@ -1,6 +1,7 @@
 import type { Options } from '@wdio/types'
-import JsonData from "../webdriverio/utility/JsonData.json" assert { type: 'json' };
-import data2 from '../webdriverio/utility/data2.js'
+import JsonData from "./utility/JsonData.json" assert { type: 'json' };
+
+import data2 from './utility/data2'
 import allure from 'allure-commandline';
 let baseURL = data2.getURL()
 let alluredir = './reports/allure'
