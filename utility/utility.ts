@@ -3,7 +3,7 @@ export default new class Utility {
     async clickElement(element)
     {
         element.scrollIntoView()
-await element.waitForDisplayed()
+await element.waitForDisplayed({ timeout: 15000})
 await element.click()
 
     }
