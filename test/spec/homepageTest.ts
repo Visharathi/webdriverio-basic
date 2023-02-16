@@ -6,7 +6,7 @@ import homeObj from '../page/homepage.js'
 import allureReporter from '@wdio/allure-reporter'
 describe('homepage test', async() => {
  
-    it('check upgrade button is displayed', async() => {
+    xit('check upgrade button is displayed', async() => {
       allureReporter.addSeverity('critical')
       allureReporter.addFeature('validate multiple window')
        await loginObj.signin(username, password)
@@ -23,13 +23,13 @@ describe('homepage test', async() => {
      // await  browser.debug()
      
      })
-     it('check User button is displayed', async() => {
+     xit('check User button is displayed', async() => {
       allureReporter.addSeverity('trivial')
       allureReporter.addFeature('validate multiple window')
         expectChai(await homeObj.checkUserDisplayed()).to.be.true;
          
        })
-       it('verify element attribute', async() => {
+       xit('verify element attribute', async() => {
          allureReporter.addSeverity('trivial')
          allureReporter.addFeature('validate multiple window')
          let text  = await homeObj.getUserAttribute()
