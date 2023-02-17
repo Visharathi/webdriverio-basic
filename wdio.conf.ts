@@ -57,7 +57,7 @@ export  const  config: Options.Testrunner = {
     //
     specs: [
         // ToDo: define location for spec files here
-        './test/spec/**/homepageTest.ts'
+        './test/spec/**/*.ts'
     ],
     // Patterns to exclude.
     exclude: [
