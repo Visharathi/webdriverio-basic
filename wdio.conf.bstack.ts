@@ -1,36 +1,25 @@
-import { config } from './wdio.conf'
-var _= require('lodash')
-
-var property =
-{
-    user: 'visharathi_NJUmnx',
-  key: 'm1K4tas2Vshqrkhh92zp',
-
+import  wdioConf  from './wdio.conf.js'
+import _ from 'lodash'
+export const config = _.defaultsDeep({
   capabilities: [
     {
         
-            browserName: 'Chrome',
-            'bstack:options': {
-              os: 'Windows',
-              osVersion: '11',
-              browserVersion: '109.0'
-            },
-            commonCapabilities: {
-                'bstack:options': {
-                  buildName: 'browserstack-build-1'
-                }
-              },
-    maxInstances: 5,
-    
-   
+      browserName: 'Chrome',
+      'bstack:options': {
+        os: 'Windows',
+        osVersion: '11',
+        browserVersion: '109.0'
+      },
+      
+maxInstances: 5,
+
+
 },
-],
+  ],
 
-services: 
-    [['browserstack', {
-       // browserstackLocal: true
-    }]],
+  // run tests on sauce instead locally
+  user: 'visharathi_NJUmnx',
+  key: 'm1K4tas2Vshqrkhh92zp',
+  services: ['browserstack']
+},wdioConf )
 
-  }
-
-exports.config= _.defaultsDeep(property,config)

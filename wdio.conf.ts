@@ -23,7 +23,7 @@ else
     
 }*/
 
-export const config: Options.Testrunner = {
+export  const  config: Options.Testrunner = {
     //
     // ====================
     // Runner Configuration
@@ -359,3 +359,4 @@ export const config: Options.Testrunner = {
     // onReload: function(oldSessionId, newSessionId) {
     // }
 }
+export default config
