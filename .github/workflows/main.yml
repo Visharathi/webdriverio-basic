@@ -1,4 +1,4 @@
-name: CI
+name: GitRun
 on: [push, pull_request]
 jobs:
   build:
