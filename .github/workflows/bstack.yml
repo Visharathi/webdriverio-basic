@@ -17,7 +17,7 @@ jobs:
               BROWSER_USER: ${{secrets.BROWSER_USER}}
               BROWSER_PWD : ${{secrets.BROWSER_PWD}}
               
-          run: npx run wdio:bstack
+          run: npm run wdio:bstack
           continue-on-error: true
         - uses: actions/upload-artifact@v3
           if: always()
