@@ -1,5 +1,7 @@
 import  wdioConf  from './wdio.conf.js'
 import _ from 'lodash'
+import * as dotenv from 'dotenv'
+dotenv.config()
 export const config = _.defaultsDeep({
   capabilities: [
     {
@@ -26,10 +28,10 @@ export const config = _.defaultsDeep({
   ],
 
   // run tests on sauce instead locally
-  /*user: 'visharathi_NJUmnx',
+ /* user: 'visharathi_NJUmnx',
   key: 'm1K4tas2Vshqrkhh92zp',*/
-  user : process.env.browser_user ,
-  key : process.env.browser_pwd ,
+  user : process.env.BROWSER_USER ,
+  key : process.env.BROWSER_PWD ,
   services: ['browserstack']
 },wdioConf )
 

@@ -1,5 +1,8 @@
 import type { Options } from '@wdio/types'
 import JsonData from "./utility/JsonData.json" assert { type: 'json' };
+import * as dotenv from 'dotenv'
+dotenv.config()
+
 
 import data2 from './utility/data2.js'
 import allure from 'allure-commandline';
@@ -62,7 +65,7 @@ export  const  config: Options.Testrunner = {
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
-      //  './test/spec/**/homepageTest.ts'
+        './test/spec/**/dummy.ts'
     ],
     //
     // ============

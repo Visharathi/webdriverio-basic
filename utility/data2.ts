@@ -1,9 +1,10 @@
 import JsonData from "./JsonData.json" assert { type: 'json' };
-
+import * as dotenv from 'dotenv'
+dotenv.config()
  class data2{
     getEnv()
     {
-        return process.env.Env
+        return process.env.ENV
 
     }
     getURL()
